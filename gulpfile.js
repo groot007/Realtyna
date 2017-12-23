@@ -94,7 +94,7 @@ gulp.task('browser-sync', function() {
 
 gulp.task('sass', function() {
 
-	return gulp.src(['app/scss/style.scss', 'app/scss/style-mobile.scss', ])
+	return gulp.src('app/scss/**/*.scss')
 		.pipe(sourcemaps.init())
 	  	.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
 		// .pipe(combineMq({
