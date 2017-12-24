@@ -62,9 +62,13 @@ body{
 	transform: scale(1);
 	transition: all .4s ease;
 
+	&.animated{
+		opacity: 0;
+	}
+
 	@media screen and (max-width: 768px){
 		min-width: 230px;
-		margin-bottom: 20px;
+		margin-bottom: 40px;
 	}
 
 	&:last-child{
@@ -512,11 +516,11 @@ body{
 
 	.left-part, .right-part{
 		width: 50%;
-		float: left;
 	}
 
 	.left-part{
 		text-align: right;
+		float: left;
 
 		.history-item{
 			margin-top: 100px;
@@ -541,6 +545,7 @@ body{
 
 	.right-part{
 		text-align: left;
+		float: right;
 
 		.history-item{
 			padding-left: 70px;
@@ -561,6 +566,42 @@ body{
 			}
 		}
 	}
+	.left-part, .right-part{
+		@media screen and (max-width: 576px){
+			width: 100%;
+			float: none;
+			text-align: center;
+		}
+
+		.history-item{
+			@media screen and (max-width: 576px){
+				padding: 60px 0 0 0;
+				margin: 80px 0 0 0;
+				text-align: center;
+			}
+
+			&__year{
+				@media screen and (max-width: 576px){
+					left: 50%;
+					transform: translateX(-50%) translateY(-50%);
+					top: 0;
+				}
+			}
+
+			&__block{
+				&:before{
+					@media screen and (max-width: 576px){
+						left: 50%;
+						top: 0;
+						transform: translateX(-50%) translateY(-100%);
+						border-right: 12px solid transparent;
+						border-left: 12px solid transparent;
+						border-bottom: 12px solid #e5e5e5;
+					}
+				}
+			}
+		}
+	}
 }
 
 .middle-line{
@@ -576,6 +617,7 @@ body{
 .history-item{
 	position: relative;
 	display: inline-block;
+
 
 	&__year{
 		position: absolute;
@@ -605,6 +647,10 @@ body{
 		padding: 19px;
 		max-width: 380px;
 		position: relative;
+
+		&.animated{
+			opacity: 0;
+		}
 
 		&:before{
 			content: "";

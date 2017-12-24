@@ -1,5 +1,30 @@
+body{
+	min-width: 320px;
+	overflow-x: hidden;
+}
+
 *{
 	box-sizing: border-box;
+}
+
+
+.preloader{
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: #fff;
+	z-index: 9999;
+	opacity: 1;
+	transition: opacity .4s ease;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	&.hide{
+		pointer-events: none;
+		opacity: 0;
+	}
 }
 
 
@@ -182,3 +207,44 @@
 		}
 	}
 }
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  position: relative;
+}
+
+.fadeInLeft {
+  animation-name: fadeInLeft;
+}
+
+.fadeInRight {
+  animation-name: fadeInRight;
+}
+
+@keyframes fadeInLeft {
+  from {
+
+    opacity: 0;
+    left: -200px;
+  }
+
+  to {
+  	left: 0;
+    opacity: 1;
+  }
+}
+
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+   	right: -200px;
+  }
+
+  to {
+  	right: 0;
+    opacity: 1;
+  }
+}
+
